@@ -9,3 +9,4 @@ CustomerName = "Harry Potter"
 AccountNumber = "1004"
 DepositAmount = "5000"
 
+Timeout = "60"
