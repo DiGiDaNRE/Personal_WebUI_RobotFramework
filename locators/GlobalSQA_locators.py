@@ -1,4 +1,4 @@
-from testdata import GlobalSQA_testdata
+from testdata   import    GlobalSQA_testdata
 
 #HomePage
 CustomerButton = "//*[contains(text(),'Customer Login')]"
