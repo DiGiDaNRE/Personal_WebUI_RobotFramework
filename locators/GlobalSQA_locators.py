@@ -1,4 +1,5 @@
-from testdata   import    GlobalSQA_testdata
+from testdata.GlobalSQA_testdata    import  CustomerName
+from testdata.GlobalSQA_testdata    import  AccountNumber
 
 #HomePage
 CustomerButton = "//*[contains(text(),'Customer Login')]"
@@ -9,7 +10,7 @@ HomePageButton = "//*[contains(text(),'Home')]"
 #CustomerPage
 CustomerPageVerify = "//*[contains(text(),'Your Name :')]"
 CustomerDropDownActiate = "//*[@id='userSelect']"
-SelectName = "//*[contains(text(),'"+str(GlobalSQA_testdata.CustomerName)+"')]"
+SelectName = "//*[contains(text(),'"+str(CustomerName)+"')]"
 LoginButton = "//*[contains(text(),'Login')]"
 
 #CustomerAccount
@@ -17,7 +18,7 @@ Cus_TransactionButton = "//*[contains(text(),'Transactions')]"
 Cus_DepositButton = "//*[@ng-click='deposit()' and contains(text(),'Deposit')]"
 Cus_Withdrawl = "//*[contains(text(),'Withdrawl')]"
 Cus_AccountNoDropDown = "//*[@id='accountSelect']"
-SelectAccountNo = "//*[@label='"+str(GlobalSQA_testdata.AccountNumber)+"']"
+SelectAccountNo = "//*[@label='"+str(AccountNumber)+"']"
 AmountInput = "//*[@placeholder='amount']"
 Cus_ConfirmDepositButton = "//*[@type='submit' and contains(text(),'Deposit')]"
 
