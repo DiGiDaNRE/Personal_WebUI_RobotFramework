@@ -26,6 +26,3 @@ Cus_ConfirmDepositButton = "//*[@type='submit' and contains(text(),'Deposit')]"
 AddCustomerButton = "//*[contains(text(),'Add Customer')]"
 OpenAccountButton = "//*[contains(text(),'Open Account')]" 
 CustomerButton_BMP = "//*[contains(text(),'Customers')]"
-
-#GLOBAL
-Timeout = "60"

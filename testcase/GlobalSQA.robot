@@ -5,9 +5,7 @@ Resource    ../resource/GlobalSQA-CustomerAccountPage.robot
 Resource    ../resource/GlobalSQA-CustomerPage.robot
 Resource    ../resource/GlobalSQA-HomePage.robot
 
-
 *** Test Cases ***
-
 Deposit to Account
     Launch Browser
     Select Customer Login

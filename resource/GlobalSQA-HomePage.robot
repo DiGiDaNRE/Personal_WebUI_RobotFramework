@@ -1,4 +1,6 @@
 *** Settings *** 
+Variables    ../testdata/GlobalSQA_testdata.py
+Variables    ../locators/GlobalSQA_locators.py
 Resource    common.robot
 
 *** Keywords ***

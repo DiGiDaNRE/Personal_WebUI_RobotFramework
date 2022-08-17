@@ -1,7 +1,7 @@
 *** Settings ***
 Library     SeleniumLibrary
 Library     Process 
-Resource    ../testcase/GlobalSQA.robot
+Variables   ../resource/common_variable.py
 
 *** Keywords ***
 Launch Browser
