@@ -1,5 +1,5 @@
 *** Settings ***
-Resource    ../testcase/GlobalSQA.robot
+Resource    GlobalSQA-Home.robot
 
 *** Keywords ***
 Select Customer
