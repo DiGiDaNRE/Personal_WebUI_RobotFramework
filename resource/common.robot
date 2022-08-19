@@ -5,6 +5,7 @@ Variables   ../Global_Variables.py
 
 *** Keywords ***
 Launch Browser
+    [Arguments]    ${browser}    ${url}
     Run Keyword If    '${browser}'=='chrome'    Launch Chrome   ${url}
     ...    ELSE IF    '${browser}'=='ie'        Launch IE    ${url} 
     ...    ELSE IF    '${browser}'=='edge'      Launch Edge     ${url} 

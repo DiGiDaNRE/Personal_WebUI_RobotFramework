@@ -1,9 +1,13 @@
 *** Settings ***
 Resource    ../resource/GlobalSQA-Home.robot
 
+*** Variables ***
+${browser}    chrome
+${url}        https://www.globalsqa.com/angularJs-protractor/BankingProject/#/login
+
 *** Test Cases ***
 Deposit to Account
-    Launch Browser
+    Launch Browser    ${browser}    ${url} 
     Select Customer Login
     Select Customer
     Select Account Number
