@@ -1,8 +1,7 @@
 *** Settings ***
 Library     SeleniumLibrary
 Library     Process 
-Variables    ../testdata/GlobalSQA_testdata.py
-Variables    ../locators/GlobalSQA_locators.py
+Variables   ../Global_Variables.py
 
 *** Keywords ***
 Launch Browser

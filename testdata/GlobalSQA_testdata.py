@@ -1,6 +1,6 @@
 #Browser URL
-browser = "chrome"
-url = "https://www.globalsqa.com/angularJs-protractor/BankingProject/#/login"
+Currentbrowser = "chrome"
+Currenturl = "https://www.globalsqa.com/angularJs-protractor/BankingProject/#/login"
 
 #CustomerPage
 CustomerName = "Harry Potter"
@@ -9,4 +9,3 @@ CustomerName = "Harry Potter"
 AccountNumber = "1004"
 DepositAmount = "5000"
 
-Timeout = "60"

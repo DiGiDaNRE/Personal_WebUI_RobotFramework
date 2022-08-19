@@ -1,7 +1,5 @@
 *** Settings *** 
-Variables    ../testdata/GlobalSQA_testdata.py
-Variables    ../locators/GlobalSQA_locators.py
-Resource    common.robot
+Resource    ../testcase/GlobalSQA.robot
 
 *** Keywords ***
 Select Customer Login
