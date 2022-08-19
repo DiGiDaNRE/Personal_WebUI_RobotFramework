@@ -1,6 +1,4 @@
-import sys
-sys.path.append('/testdata/GlobalSQA')
-from testdata.GlobalSQA.GlobalSQA_testdata import *
+from GlobalSQA_testdata import *
 
 #HomePage
 CustomerButton = "//*[contains(text(),'Customer Login')]"
