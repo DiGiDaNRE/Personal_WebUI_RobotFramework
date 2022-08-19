@@ -1,6 +1,5 @@
 *** Settings ***
 Resource    ../resource/GlobalSQA-Home.robot
-
 *** Variables ***
 ${browser}    chrome
 ${url}        https://www.globalsqa.com/angularJs-protractor/BankingProject/#/login
