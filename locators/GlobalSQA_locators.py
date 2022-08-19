@@ -1,5 +1,5 @@
-from testdata.GlobalSQA_testdata    import  CustomerName
-from testdata.GlobalSQA_testdata    import  AccountNumber
+from testdata.GlobalSQA_testdata import CustomerName
+from testdata.GlobalSQA_testdata import AccountNumber
 
 #HomePage
 CustomerButton = "//*[contains(text(),'Customer Login')]"
