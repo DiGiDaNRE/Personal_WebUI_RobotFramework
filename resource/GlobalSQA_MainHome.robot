@@ -1,9 +1,10 @@
 *** Settings ***
 Variables   ../testdata/GlobalSQA/GlobalSQA_testdata.py
 Variables   ../testdata/GlobalSQA/GlobalSQA_locators.py
-Resource    ../resource/GlobalSQA-CustomerAccountPage.robot
-Resource    ../resource/GlobalSQA-CustomerPage.robot
-Resource    ../resource/GlobalSQA-Home.robot
+Resource    ../resource/GlobalSQA_Customer_AccountPage.robot
+Resource    ../resource/GlobalSQA_Customer_HomePage.robot
+Resource    ../resource/GlobalSQA_MainHome.robot
+Resource    ../resource/GlobalSQA_Manager_HomePage.robot
 Resource    ../resource/common.robot    
 
 *** Keywords ***
