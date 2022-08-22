@@ -1,9 +1,9 @@
 #CUSTOMER
     #Customer_HomePage
-CustomerName = "Water Bender"
+CustomerName = "Harry Potter"
 
     #Customer_AccountPage
-AccountNumber = "1016"
+AccountNumber = "1005"
 
         #Deposit
 DepositAmount = "5000"
