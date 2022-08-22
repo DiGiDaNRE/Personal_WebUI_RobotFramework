@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 5.0.1 (Python 3.9.13 on win32)" generated="20220819 14:32:21.272" rpa="false" schemaversion="3">
-<suite id="s1" name="GlobalSQA" source="C:\Automation_Projects\RF_Automation\testcase\GlobalSQA.robot">
-<test id="s1-t1" name="Deposit to Account" line="8">
-<kw name="Launch Browser" library="common">
+<robot generator="Robot 5.0.1 (Python 3.9.13 on win32)" generated="20220822 17:50:28.816" rpa="false" schemaversion="3">
+<suite id="s1" name="GlobalSQA" source="c:\Automation_Projects\RF_Automation\testcase\GlobalSQA.robot">
+<test id="s1-t1" name="Add new customer and account for customer to deposit then Withdraw" line="46">
+<kw name="Launch Browser" library="common" type="SETUP">
 <arg>${browser}</arg>
 <arg>${url}</arg>
 <kw name="Run Keyword If" library="BuiltIn">
@@ -25,103 +25,1631 @@
 <arg>sys.modules['selenium.webdriver'].ChromeOptions()</arg>
 <arg>sys,selenium.webdriver</arg>
 <doc>Evaluates the given expression in Python and returns the result.</doc>
-<msg timestamp="20220819 14:32:21.767" level="INFO">${chrome_options} = &lt;selenium.webdriver.chrome.options.Options object at 0x000001F32C2F9A90&gt;</msg>
-<status status="PASS" starttime="20220819 14:32:21.767" endtime="20220819 14:32:21.767"/>
+<msg timestamp="20220822 17:50:29.274" level="INFO">${chrome_options} = &lt;selenium.webdriver.chrome.options.Options object at 0x000001E9A7582B20&gt;</msg>
+<status status="PASS" starttime="20220822 17:50:29.273" endtime="20220822 17:50:29.286"/>
 </kw>
 <kw name="Call Method" library="BuiltIn">
 <arg>${chrome_options}</arg>
 <arg>add_argument</arg>
 <arg>ignore-certificate-errors</arg>
 <doc>Calls the named method of the given object with the provided arguments.</doc>
-<status status="PASS" starttime="20220819 14:32:21.767" endtime="20220819 14:32:21.767"/>
+<status status="PASS" starttime="20220822 17:50:29.286" endtime="20220822 17:50:29.287"/>
 </kw>
 <kw name="Call Method" library="BuiltIn">
 <arg>${chrome_options}</arg>
 <arg>add_argument</arg>
 <arg>--start-maximized</arg>
 <doc>Calls the named method of the given object with the provided arguments.</doc>
-<status status="PASS" starttime="20220819 14:32:21.767" endtime="20220819 14:32:21.767"/>
+<status status="PASS" starttime="20220822 17:50:29.287" endtime="20220822 17:50:29.287"/>
 </kw>
 <kw name="Call Method" library="BuiltIn">
 <var>${chrome_options}</var>
 <arg>${chrome_options}</arg>
 <arg>to_capabilities</arg>
 <doc>Calls the named method of the given object with the provided arguments.</doc>
-<msg timestamp="20220819 14:32:21.767" level="INFO">${chrome_options} = {'browserName': 'chrome', 'pageLoadStrategy': 'normal', 'goog:chromeOptions': {'extensions': [], 'args': ['ignore-certificate-errors', '--start-maximized']}}</msg>
-<status status="PASS" starttime="20220819 14:32:21.767" endtime="20220819 14:32:21.767"/>
+<msg timestamp="20220822 17:50:29.288" level="INFO">${chrome_options} = {'browserName': 'chrome', 'pageLoadStrategy': 'normal', 'goog:chromeOptions': {'extensions': [], 'args': ['ignore-certificate-errors', '--start-maximized']}}</msg>
+<status status="PASS" starttime="20220822 17:50:29.287" endtime="20220822 17:50:29.288"/>
 </kw>
 <kw name="Open Browser" library="SeleniumLibrary">
 <arg>${url}</arg>
 <arg>chrome</arg>
 <arg>desired_capabilities=${chrome_options}</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<msg timestamp="20220819 14:32:21.767" level="INFO">Opening browser 'chrome' to base url 'https://www.globalsqa.com/angularJs-protractor/BankingProject/#/login'.</msg>
-<status status="PASS" starttime="20220819 14:32:21.767" endtime="20220819 14:32:24.580"/>
+<msg timestamp="20220822 17:50:29.289" level="INFO">Opening browser 'chrome' to base url 'https://www.globalsqa.com/angularJs-protractor/BankingProject/#/login'.</msg>
+<status status="PASS" starttime="20220822 17:50:29.288" endtime="20220822 17:50:32.556"/>
 </kw>
 <kw name="Maximize Browser Window" library="SeleniumLibrary">
 <doc>Maximizes current browser window.</doc>
-<status status="PASS" starttime="20220819 14:32:24.580" endtime="20220819 14:32:24.712"/>
+<status status="PASS" starttime="20220822 17:50:32.556" endtime="20220822 17:50:32.683"/>
 </kw>
-<status status="PASS" starttime="20220819 14:32:21.767" endtime="20220819 14:32:24.712"/>
+<status status="PASS" starttime="20220822 17:50:29.272" endtime="20220822 17:50:32.683"/>
 </kw>
-<status status="PASS" starttime="20220819 14:32:21.767" endtime="20220819 14:32:24.712"/>
+<status status="PASS" starttime="20220822 17:50:29.272" endtime="20220822 17:50:32.684"/>
 </kw>
-<status status="PASS" starttime="20220819 14:32:21.767" endtime="20220819 14:32:24.712"/>
+<status status="PASS" starttime="20220822 17:50:29.271" endtime="20220822 17:50:32.684"/>
 </kw>
-<kw name="Select Customer Login" library="GlobalSQA-Home">
+<kw name="Select Bank Manager Login" library="GlobalSQA_MainHome">
+<kw name="Press A Button/Element" library="common">
+<arg>${BankManagerButton}</arg>
+<kw name="Wait For Element" library="common">
+<arg>${Locator}</arg>
+<kw name="Wait Until Page Loads" library="common">
+<kw name="Wait Until Keyword Succeeds" library="BuiltIn">
+<arg>5x</arg>
+<arg>1s</arg>
+<arg>Wait For Condition</arg>
+<arg>return document.readyState === 'complete'</arg>
+<arg>${Timeout}</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<kw name="Wait For Condition" library="SeleniumLibrary">
+<arg>return document.readyState === 'complete'</arg>
+<arg>${Timeout}</arg>
+<doc>Waits until ``condition`` is true or ``timeout`` expires.</doc>
+<status status="PASS" starttime="20220822 17:50:32.687" endtime="20220822 17:50:32.693"/>
+</kw>
+<status status="PASS" starttime="20220822 17:50:32.687" endtime="20220822 17:50:32.693"/>
+</kw>
+<status status="PASS" starttime="20220822 17:50:32.686" endtime="20220822 17:50:32.694"/>
+</kw>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<arg>${Locator}</arg>
+<arg>${Timeout}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" starttime="20220822 17:50:32.694" endtime="20220822 17:50:33.131"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${Locator}</arg>
+<arg>${Timeout}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20220822 17:50:33.131" endtime="20220822 17:50:33.175"/>
+</kw>
+<kw name="Wait Until Element Is Enabled" library="SeleniumLibrary">
+<arg>${Locator}</arg>
+<arg>${Timeout}</arg>
+<doc>Waits until the element ``locator`` is enabled.</doc>
+<status status="PASS" starttime="20220822 17:50:33.175" endtime="20220822 17:50:33.199"/>
+</kw>
+<status status="PASS" starttime="20220822 17:50:32.686" endtime="20220822 17:50:33.199"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${Locator}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220822 17:50:33.199" level="INFO">Clicking element '//*[contains(text(),'Bank Manager Login')]'.</msg>
+<status status="PASS" starttime="20220822 17:50:33.199" endtime="20220822 17:50:33.249"/>
+</kw>
+<status status="PASS" starttime="20220822 17:50:32.685" endtime="20220822 17:50:33.265"/>
+</kw>
+<kw name="Wait For Element" library="common">
+<arg>${AddCustomerButton}</arg>
+<kw name="Wait Until Page Loads" library="common">
+<kw name="Wait Until Keyword Succeeds" library="BuiltIn">
+<arg>5x</arg>
+<arg>1s</arg>
+<arg>Wait For Condition</arg>
+<arg>return document.readyState === 'complete'</arg>
+<arg>${Timeout}</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<kw name="Wait For Condition" library="SeleniumLibrary">
+<arg>return document.readyState === 'complete'</arg>
+<arg>${Timeout}</arg>
+<doc>Waits until ``condition`` is true or ``timeout`` expires.</doc>
+<status status="PASS" starttime="20220822 17:50:33.267" endtime="20220822 17:50:33.273"/>
+</kw>
+<status status="PASS" starttime="20220822 17:50:33.267" endtime="20220822 17:50:33.274"/>
+</kw>
+<status status="PASS" starttime="20220822 17:50:33.266" endtime="20220822 17:50:33.274"/>
+</kw>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<arg>${Locator}</arg>
+<arg>${Timeout}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" starttime="20220822 17:50:33.274" endtime="20220822 17:50:33.526"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${Locator}</arg>
+<arg>${Timeout}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20220822 17:50:33.527" endtime="20220822 17:50:33.554"/>
+</kw>
+<kw name="Wait Until Element Is Enabled" library="SeleniumLibrary">
+<arg>${Locator}</arg>
+<arg>${Timeout}</arg>
+<doc>Waits until the element ``locator`` is enabled.</doc>
+<status status="PASS" starttime="20220822 17:50:33.555" endtime="20220822 17:50:33.590"/>
+</kw>
+<status status="PASS" starttime="20220822 17:50:33.265" endtime="20220822 17:50:33.590"/>
+</kw>
+<kw name="Wait For Element" library="common">
+<arg>${OpenAccountButton}</arg>
+<kw name="Wait Until Page Loads" library="common">
+<kw name="Wait Until Keyword Succeeds" library="BuiltIn">
+<arg>5x</arg>
+<arg>1s</arg>
+<arg>Wait For Condition</arg>
+<arg>return document.readyState === 'complete'</arg>
+<arg>${Timeout}</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<kw name="Wait For Condition" library="SeleniumLibrary">
+<arg>return document.readyState === 'complete'</arg>
+<arg>${Timeout}</arg>
+<doc>Waits until ``condition`` is true or ``timeout`` expires.</doc>
+<status status="PASS" starttime="20220822 17:50:33.592" endtime="20220822 17:50:33.598"/>
+</kw>
+<status status="PASS" starttime="20220822 17:50:33.591" endtime="20220822 17:50:33.598"/>
+</kw>
+<status status="PASS" starttime="20220822 17:50:33.591" endtime="20220822 17:50:33.599"/>
+</kw>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<arg>${Locator}</arg>
+<arg>${Timeout}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" starttime="20220822 17:50:33.600" endtime="20220822 17:50:33.613"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${Locator}</arg>
+<arg>${Timeout}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20220822 17:50:33.613" endtime="20220822 17:50:33.634"/>
+</kw>
+<kw name="Wait Until Element Is Enabled" library="SeleniumLibrary">
+<arg>${Locator}</arg>
+<arg>${Timeout}</arg>
+<doc>Waits until the element ``locator`` is enabled.</doc>
+<status status="PASS" starttime="20220822 17:50:33.635" endtime="20220822 17:50:33.666"/>
+</kw>
+<status status="PASS" starttime="20220822 17:50:33.590" endtime="20220822 17:50:33.666"/>
+</kw>
+<kw name="Wait For Element" library="common">
+<arg>${CustomerButton_BMP}</arg>
+<kw name="Wait Until Page Loads" library="common">
+<kw name="Wait Until Keyword Succeeds" library="BuiltIn">
+<arg>5x</arg>
+<arg>1s</arg>
+<arg>Wait For Condition</arg>
+<arg>return document.readyState === 'complete'</arg>
+<arg>${Timeout}</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<kw name="Wait For Condition" library="SeleniumLibrary">
+<arg>return document.readyState === 'complete'</arg>
+<arg>${Timeout}</arg>
+<doc>Waits until ``condition`` is true or ``timeout`` expires.</doc>
+<status status="PASS" starttime="20220822 17:50:33.668" endtime="20220822 17:50:33.673"/>
+</kw>
+<status status="PASS" starttime="20220822 17:50:33.667" endtime="20220822 17:50:33.673"/>
+</kw>
+<status status="PASS" starttime="20220822 17:50:33.667" endtime="20220822 17:50:33.674"/>
+</kw>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<arg>${Locator}</arg>
+<arg>${Timeout}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" starttime="20220822 17:50:33.674" endtime="20220822 17:50:33.688"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${Locator}</arg>
+<arg>${Timeout}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20220822 17:50:33.688" endtime="20220822 17:50:33.712"/>
+</kw>
+<kw name="Wait Until Element Is Enabled" library="SeleniumLibrary">
+<arg>${Locator}</arg>
+<arg>${Timeout}</arg>
+<doc>Waits until the element ``locator`` is enabled.</doc>
+<status status="PASS" starttime="20220822 17:50:33.712" endtime="20220822 17:50:33.742"/>
+</kw>
+<status status="PASS" starttime="20220822 17:50:33.666" endtime="20220822 17:50:33.742"/>
+</kw>
+<status status="PASS" starttime="20220822 17:50:32.685" endtime="20220822 17:50:33.742"/>
+</kw>
+<kw name="Add Customer" library="GlobalSQA_Manager_HomePage">
+<kw name="Press A Button/Element" library="common">
+<arg>${AddCustomerButton}</arg>
+<kw name="Wait For Element" library="common">
+<arg>${Locator}</arg>
+<kw name="Wait Until Page Loads" library="common">
+<kw name="Wait Until Keyword Succeeds" library="BuiltIn">
+<arg>5x</arg>
+<arg>1s</arg>
+<arg>Wait For Condition</arg>
+<arg>return document.readyState === 'complete'</arg>
+<arg>${Timeout}</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<kw name="Wait For Condition" library="SeleniumLibrary">
+<arg>return document.readyState === 'complete'</arg>
+<arg>${Timeout}</arg>
+<doc>Waits until ``condition`` is true or ``timeout`` expires.</doc>
+<status status="PASS" starttime="20220822 17:50:33.746" endtime="20220822 17:50:33.751"/>
+</kw>
+<status status="PASS" starttime="20220822 17:50:33.745" endtime="20220822 17:50:33.751"/>
+</kw>
+<status status="PASS" starttime="20220822 17:50:33.745" endtime="20220822 17:50:33.751"/>
+</kw>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<arg>${Locator}</arg>
+<arg>${Timeout}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" starttime="20220822 17:50:33.752" endtime="20220822 17:50:33.760"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${Locator}</arg>
+<arg>${Timeout}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20220822 17:50:33.760" endtime="20220822 17:50:33.779"/>
+</kw>
+<kw name="Wait Until Element Is Enabled" library="SeleniumLibrary">
+<arg>${Locator}</arg>
+<arg>${Timeout}</arg>
+<doc>Waits until the element ``locator`` is enabled.</doc>
+<status status="PASS" starttime="20220822 17:50:33.779" endtime="20220822 17:50:33.807"/>
+</kw>
+<status status="PASS" starttime="20220822 17:50:33.744" endtime="20220822 17:50:33.807"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${Locator}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220822 17:50:33.808" level="INFO">Clicking element '//*[contains(text(),'Add Customer')]'.</msg>
+<status status="PASS" starttime="20220822 17:50:33.808" endtime="20220822 17:50:33.855"/>
+</kw>
+<status status="PASS" starttime="20220822 17:50:33.744" endtime="20220822 17:50:33.856"/>
+</kw>
+<kw name="Input in Textbox" library="common">
+<arg>${FirstNameInput}</arg>
+<arg>${Add_FirstName}</arg>
+<kw name="Wait For Element" library="common">
+<arg>${Locator}</arg>
+<kw name="Wait Until Page Loads" library="common">
+<kw name="Wait Until Keyword Succeeds" library="BuiltIn">
+<arg>5x</arg>
+<arg>1s</arg>
+<arg>Wait For Condition</arg>
+<arg>return document.readyState === 'complete'</arg>
+<arg>${Timeout}</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<kw name="Wait For Condition" library="SeleniumLibrary">
+<arg>return document.readyState === 'complete'</arg>
+<arg>${Timeout}</arg>
+<doc>Waits until ``condition`` is true or ``timeout`` expires.</doc>
+<status status="PASS" starttime="20220822 17:50:33.858" endtime="20220822 17:50:33.863"/>
+</kw>
+<status status="PASS" starttime="20220822 17:50:33.858" endtime="20220822 17:50:33.863"/>
+</kw>
+<status status="PASS" starttime="20220822 17:50:33.857" endtime="20220822 17:50:33.863"/>
+</kw>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<arg>${Locator}</arg>
+<arg>${Timeout}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" starttime="20220822 17:50:33.864" endtime="20220822 17:50:34.291"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${Locator}</arg>
+<arg>${Timeout}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20220822 17:50:34.291" endtime="20220822 17:50:34.322"/>
+</kw>
+<kw name="Wait Until Element Is Enabled" library="SeleniumLibrary">
+<arg>${Locator}</arg>
+<arg>${Timeout}</arg>
+<doc>Waits until the element ``locator`` is enabled.</doc>
+<status status="PASS" starttime="20220822 17:50:34.322" endtime="20220822 17:50:34.348"/>
+</kw>
+<status status="PASS" starttime="20220822 17:50:33.857" endtime="20220822 17:50:34.348"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${Locator}</arg>
+<arg>${text}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220822 17:50:34.364" level="INFO">Typing text 'Water' into text field '//*[@placeholder='First Name']'.</msg>
+<status status="PASS" starttime="20220822 17:50:34.348" endtime="20220822 17:50:34.545"/>
+</kw>
+<status status="PASS" starttime="20220822 17:50:33.856" endtime="20220822 17:50:34.545"/>
+</kw>
+<kw name="Input in Textbox" library="common">
+<arg>${LastNameInput}</arg>
+<arg>${Add_LastName}</arg>
+<kw name="Wait For Element" library="common">
+<arg>${Locator}</arg>
+<kw name="Wait Until Page Loads" library="common">
+<kw name="Wait Until Keyword Succeeds" library="BuiltIn">
+<arg>5x</arg>
+<arg>1s</arg>
+<arg>Wait For Condition</arg>
+<arg>return document.readyState === 'complete'</arg>
+<arg>${Timeout}</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<kw name="Wait For Condition" library="SeleniumLibrary">
+<arg>return document.readyState === 'complete'</arg>
+<arg>${Timeout}</arg>
+<doc>Waits until ``condition`` is true or ``timeout`` expires.</doc>
+<status status="PASS" starttime="20220822 17:50:34.549" endtime="20220822 17:50:34.554"/>
+</kw>
+<status status="PASS" starttime="20220822 17:50:34.548" endtime="20220822 17:50:34.554"/>
+</kw>
+<status status="PASS" starttime="20220822 17:50:34.547" endtime="20220822 17:50:34.555"/>
+</kw>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<arg>${Locator}</arg>
+<arg>${Timeout}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" starttime="20220822 17:50:34.555" endtime="20220822 17:50:34.567"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${Locator}</arg>
+<arg>${Timeout}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20220822 17:50:34.567" endtime="20220822 17:50:34.598"/>
+</kw>
+<kw name="Wait Until Element Is Enabled" library="SeleniumLibrary">
+<arg>${Locator}</arg>
+<arg>${Timeout}</arg>
+<doc>Waits until the element ``locator`` is enabled.</doc>
+<status status="PASS" starttime="20220822 17:50:34.598" endtime="20220822 17:50:34.629"/>
+</kw>
+<status status="PASS" starttime="20220822 17:50:34.547" endtime="20220822 17:50:34.629"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${Locator}</arg>
+<arg>${text}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220822 17:50:34.629" level="INFO">Typing text 'Bender' into text field '//*[@placeholder='Last Name']'.</msg>
+<status status="PASS" starttime="20220822 17:50:34.629" endtime="20220822 17:50:34.797"/>
+</kw>
+<status status="PASS" starttime="20220822 17:50:34.546" endtime="20220822 17:50:34.797"/>
+</kw>
+<kw name="Input in Textbox" library="common">
+<arg>${PostCodeInput}</arg>
+<arg>${Add_PostCode}</arg>
+<kw name="Wait For Element" library="common">
+<arg>${Locator}</arg>
+<kw name="Wait Until Page Loads" library="common">
+<kw name="Wait Until Keyword Succeeds" library="BuiltIn">
+<arg>5x</arg>
+<arg>1s</arg>
+<arg>Wait For Condition</arg>
+<arg>return document.readyState === 'complete'</arg>
+<arg>${Timeout}</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<kw name="Wait For Condition" library="SeleniumLibrary">
+<arg>return document.readyState === 'complete'</arg>
+<arg>${Timeout}</arg>
+<doc>Waits until ``condition`` is true or ``timeout`` expires.</doc>
+<status status="PASS" starttime="20220822 17:50:34.803" endtime="20220822 17:50:34.810"/>
+</kw>
+<status status="PASS" starttime="20220822 17:50:34.802" endtime="20220822 17:50:34.810"/>
+</kw>
+<status status="PASS" starttime="20220822 17:50:34.801" endtime="20220822 17:50:34.810"/>
+</kw>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<arg>${Locator}</arg>
+<arg>${Timeout}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" starttime="20220822 17:50:34.811" endtime="20220822 17:50:34.816"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${Locator}</arg>
+<arg>${Timeout}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20220822 17:50:34.816" endtime="20220822 17:50:34.871"/>
+</kw>
+<kw name="Wait Until Element Is Enabled" library="SeleniumLibrary">
+<arg>${Locator}</arg>
+<arg>${Timeout}</arg>
+<doc>Waits until the element ``locator`` is enabled.</doc>
+<status status="PASS" starttime="20220822 17:50:34.872" endtime="20220822 17:50:34.915"/>
+</kw>
+<status status="PASS" starttime="20220822 17:50:34.799" endtime="20220822 17:50:34.915"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${Locator}</arg>
+<arg>${text}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220822 17:50:34.915" level="INFO">Typing text '1023' into text field '//*[@placeholder='Post Code']'.</msg>
+<status status="PASS" starttime="20220822 17:50:34.915" endtime="20220822 17:50:35.054"/>
+</kw>
+<status status="PASS" starttime="20220822 17:50:34.797" endtime="20220822 17:50:35.055"/>
+</kw>
+<kw name="Press A Button/Element" library="common">
+<arg>${Manager_ConfirmAddAccButton}</arg>
+<kw name="Wait For Element" library="common">
+<arg>${Locator}</arg>
+<kw name="Wait Until Page Loads" library="common">
+<kw name="Wait Until Keyword Succeeds" library="BuiltIn">
+<arg>5x</arg>
+<arg>1s</arg>
+<arg>Wait For Condition</arg>
+<arg>return document.readyState === 'complete'</arg>
+<arg>${Timeout}</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<kw name="Wait For Condition" library="SeleniumLibrary">
+<arg>return document.readyState === 'complete'</arg>
+<arg>${Timeout}</arg>
+<doc>Waits until ``condition`` is true or ``timeout`` expires.</doc>
+<status status="PASS" starttime="20220822 17:50:35.059" endtime="20220822 17:50:35.064"/>
+</kw>
+<status status="PASS" starttime="20220822 17:50:35.058" endtime="20220822 17:50:35.065"/>
+</kw>
+<status status="PASS" starttime="20220822 17:50:35.057" endtime="20220822 17:50:35.066"/>
+</kw>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<arg>${Locator}</arg>
+<arg>${Timeout}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" starttime="20220822 17:50:35.066" endtime="20220822 17:50:35.085"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${Locator}</arg>
+<arg>${Timeout}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20220822 17:50:35.085" endtime="20220822 17:50:35.110"/>
+</kw>
+<kw name="Wait Until Element Is Enabled" library="SeleniumLibrary">
+<arg>${Locator}</arg>
+<arg>${Timeout}</arg>
+<doc>Waits until the element ``locator`` is enabled.</doc>
+<status status="PASS" starttime="20220822 17:50:35.110" endtime="20220822 17:50:35.143"/>
+</kw>
+<status status="PASS" starttime="20220822 17:50:35.056" endtime="20220822 17:50:35.143"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${Locator}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220822 17:50:35.144" level="INFO">Clicking element '//*[@type='submit' and contains(text(),'Add Customer')]'.</msg>
+<status status="PASS" starttime="20220822 17:50:35.143" endtime="20220822 17:50:35.200"/>
+</kw>
+<status status="PASS" starttime="20220822 17:50:35.055" endtime="20220822 17:50:35.200"/>
+</kw>
+<status status="PASS" starttime="20220822 17:50:33.743" endtime="20220822 17:50:35.201"/>
+</kw>
+<kw name="Open Account" library="GlobalSQA_Manager_HomePage">
+<kw name="Press A Button/Element" library="common">
+<arg>${OpenAccountButton}</arg>
+<kw name="Wait For Element" library="common">
+<arg>${Locator}</arg>
+<kw name="Wait Until Page Loads" library="common">
+<kw name="Wait Until Keyword Succeeds" library="BuiltIn">
+<arg>5x</arg>
+<arg>1s</arg>
+<arg>Wait For Condition</arg>
+<arg>return document.readyState === 'complete'</arg>
+<arg>${Timeout}</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<kw name="Wait For Condition" library="SeleniumLibrary">
+<arg>return document.readyState === 'complete'</arg>
+<arg>${Timeout}</arg>
+<doc>Waits until ``condition`` is true or ``timeout`` expires.</doc>
+<msg timestamp="20220822 17:50:35.448" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-1.png"&gt;&lt;img src="selenium-screenshot-1.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg timestamp="20220822 17:50:35.448" level="FAIL">UnexpectedAlertPresentException: Alert Text: Customer added successfully with customer id :6
+Message: unexpected alert open: {Alert text : Customer added successfully with customer id :6}
+  (Session info: chrome=104.0.5112.82)
+Stacktrace:
+Backtrace:
+	Ordinal0 [0x003078B3+2193587]
+	Ordinal0 [0x002A0681+1771137]
+	Ordinal0 [0x001B41A8+803240]
+	Ordinal0 [0x0020D952+1169746]
+	Ordinal0 [0x001FD5C6+1103302]
+	Ordinal0 [0x001D77E0+948192]
+	Ordinal0 [0x001D86E6+952038]
+	GetHandleVerifier [0x005B0CB2+2738370]
+	GetHandleVerifier [0x005A21B8+2678216]
+	GetHandleVerifier [0x003917AA+512954]
+	GetHandleVerifier [0x00390856+509030]
+	Ordinal0 [0x002A743B+1799227]
+	Ordinal0 [0x002ABB68+1817448]
+	Ordinal0 [0x002ABC55+1817685]
+	Ordinal0 [0x002B5230+1856048]
+	BaseThreadInitThunk [0x7649FA29+25]
+	RtlGetAppContainerNamedObjectPath [0x77D17A9E+286]
+	RtlGetAppContainerNamedObjectPath [0x77D17A6E+238]
+	(No symbol) [0x00000000]
+</msg>
+<status status="FAIL" starttime="20220822 17:50:35.207" endtime="20220822 17:50:35.448"/>
+</kw>
+<kw name="Wait For Condition" library="SeleniumLibrary">
+<arg>return document.readyState === 'complete'</arg>
+<arg>${Timeout}</arg>
+<doc>Waits until ``condition`` is true or ``timeout`` expires.</doc>
+<status status="PASS" starttime="20220822 17:50:36.453" endtime="20220822 17:50:36.453"/>
+</kw>
+<status status="PASS" starttime="20220822 17:50:35.206" endtime="20220822 17:50:36.453"/>
+</kw>
+<status status="PASS" starttime="20220822 17:50:35.204" endtime="20220822 17:50:36.453"/>
+</kw>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<arg>${Locator}</arg>
+<arg>${Timeout}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" starttime="20220822 17:50:36.453" endtime="20220822 17:50:36.453"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${Locator}</arg>
+<arg>${Timeout}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20220822 17:50:36.453" endtime="20220822 17:50:36.484"/>
+</kw>
+<kw name="Wait Until Element Is Enabled" library="SeleniumLibrary">
+<arg>${Locator}</arg>
+<arg>${Timeout}</arg>
+<doc>Waits until the element ``locator`` is enabled.</doc>
+<status status="PASS" starttime="20220822 17:50:36.484" endtime="20220822 17:50:36.520"/>
+</kw>
+<status status="PASS" starttime="20220822 17:50:35.203" endtime="20220822 17:50:36.520"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${Locator}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220822 17:50:36.520" level="INFO">Clicking element '//*[contains(text(),'Open Account')]'.</msg>
+<status status="PASS" starttime="20220822 17:50:36.520" endtime="20220822 17:50:36.573"/>
+</kw>
+<status status="PASS" starttime="20220822 17:50:35.202" endtime="20220822 17:50:36.574"/>
+</kw>
+<kw name="Press A Button/Element" library="common">
+<arg>${CustomerAccountDropDownActivate}</arg>
+<kw name="Wait For Element" library="common">
+<arg>${Locator}</arg>
+<kw name="Wait Until Page Loads" library="common">
+<kw name="Wait Until Keyword Succeeds" library="BuiltIn">
+<arg>5x</arg>
+<arg>1s</arg>
+<arg>Wait For Condition</arg>
+<arg>return document.readyState === 'complete'</arg>
+<arg>${Timeout}</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<kw name="Wait For Condition" library="SeleniumLibrary">
+<arg>return document.readyState === 'complete'</arg>
+<arg>${Timeout}</arg>
+<doc>Waits until ``condition`` is true or ``timeout`` expires.</doc>
+<status status="PASS" starttime="20220822 17:50:36.576" endtime="20220822 17:50:36.582"/>
+</kw>
+<status status="PASS" starttime="20220822 17:50:36.576" endtime="20220822 17:50:36.582"/>
+</kw>
+<status status="PASS" starttime="20220822 17:50:36.575" endtime="20220822 17:50:36.583"/>
+</kw>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<arg>${Locator}</arg>
+<arg>${Timeout}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" starttime="20220822 17:50:36.583" endtime="20220822 17:50:37.047"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${Locator}</arg>
+<arg>${Timeout}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20220822 17:50:37.047" endtime="20220822 17:50:37.066"/>
+</kw>
+<kw name="Wait Until Element Is Enabled" library="SeleniumLibrary">
+<arg>${Locator}</arg>
+<arg>${Timeout}</arg>
+<doc>Waits until the element ``locator`` is enabled.</doc>
+<status status="PASS" starttime="20220822 17:50:37.066" endtime="20220822 17:50:37.082"/>
+</kw>
+<status status="PASS" starttime="20220822 17:50:36.574" endtime="20220822 17:50:37.082"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${Locator}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220822 17:50:37.098" level="INFO">Clicking element '//*[@id='userSelect']'.</msg>
+<status status="PASS" starttime="20220822 17:50:37.082" endtime="20220822 17:50:37.168"/>
+</kw>
+<status status="PASS" starttime="20220822 17:50:36.574" endtime="20220822 17:50:37.169"/>
+</kw>
+<kw name="Press A Button/Element" library="common">
+<arg>${CustomerAccountSelect}</arg>
+<kw name="Wait For Element" library="common">
+<arg>${Locator}</arg>
+<kw name="Wait Until Page Loads" library="common">
+<kw name="Wait Until Keyword Succeeds" library="BuiltIn">
+<arg>5x</arg>
+<arg>1s</arg>
+<arg>Wait For Condition</arg>
+<arg>return document.readyState === 'complete'</arg>
+<arg>${Timeout}</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<kw name="Wait For Condition" library="SeleniumLibrary">
+<arg>return document.readyState === 'complete'</arg>
+<arg>${Timeout}</arg>
+<doc>Waits until ``condition`` is true or ``timeout`` expires.</doc>
+<status status="PASS" starttime="20220822 17:50:37.173" endtime="20220822 17:50:37.183"/>
+</kw>
+<status status="PASS" starttime="20220822 17:50:37.172" endtime="20220822 17:50:37.184"/>
+</kw>
+<status status="PASS" starttime="20220822 17:50:37.171" endtime="20220822 17:50:37.184"/>
+</kw>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<arg>${Locator}</arg>
+<arg>${Timeout}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" starttime="20220822 17:50:37.184" endtime="20220822 17:50:37.203"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${Locator}</arg>
+<arg>${Timeout}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20220822 17:50:37.204" endtime="20220822 17:50:37.227"/>
+</kw>
+<kw name="Wait Until Element Is Enabled" library="SeleniumLibrary">
+<arg>${Locator}</arg>
+<arg>${Timeout}</arg>
+<doc>Waits until the element ``locator`` is enabled.</doc>
+<status status="PASS" starttime="20220822 17:50:37.228" endtime="20220822 17:50:37.264"/>
+</kw>
+<status status="PASS" starttime="20220822 17:50:37.171" endtime="20220822 17:50:37.265"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${Locator}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220822 17:50:37.265" level="INFO">Clicking element '//*[contains(text(),'Water Bender')]'.</msg>
+<status status="PASS" starttime="20220822 17:50:37.265" endtime="20220822 17:50:37.309"/>
+</kw>
+<status status="PASS" starttime="20220822 17:50:37.170" endtime="20220822 17:50:37.309"/>
+</kw>
+<kw name="Press A Button/Element" library="common">
+<arg>${CurrencyDropDownActivate}</arg>
+<kw name="Wait For Element" library="common">
+<arg>${Locator}</arg>
+<kw name="Wait Until Page Loads" library="common">
+<kw name="Wait Until Keyword Succeeds" library="BuiltIn">
+<arg>5x</arg>
+<arg>1s</arg>
+<arg>Wait For Condition</arg>
+<arg>return document.readyState === 'complete'</arg>
+<arg>${Timeout}</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<kw name="Wait For Condition" library="SeleniumLibrary">
+<arg>return document.readyState === 'complete'</arg>
+<arg>${Timeout}</arg>
+<doc>Waits until ``condition`` is true or ``timeout`` expires.</doc>
+<status status="PASS" starttime="20220822 17:50:37.312" endtime="20220822 17:50:37.317"/>
+</kw>
+<status status="PASS" starttime="20220822 17:50:37.311" endtime="20220822 17:50:37.317"/>
+</kw>
+<status status="PASS" starttime="20220822 17:50:37.311" endtime="20220822 17:50:37.318"/>
+</kw>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<arg>${Locator}</arg>
+<arg>${Timeout}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" starttime="20220822 17:50:37.318" endtime="20220822 17:50:37.330"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${Locator}</arg>
+<arg>${Timeout}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20220822 17:50:37.330" endtime="20220822 17:50:37.350"/>
+</kw>
+<kw name="Wait Until Element Is Enabled" library="SeleniumLibrary">
+<arg>${Locator}</arg>
+<arg>${Timeout}</arg>
+<doc>Waits until the element ``locator`` is enabled.</doc>
+<status status="PASS" starttime="20220822 17:50:37.351" endtime="20220822 17:50:37.367"/>
+</kw>
+<status status="PASS" starttime="20220822 17:50:37.310" endtime="20220822 17:50:37.382"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${Locator}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220822 17:50:37.382" level="INFO">Clicking element '//*[@id='currency']'.</msg>
+<status status="PASS" starttime="20220822 17:50:37.382" endtime="20220822 17:50:37.474"/>
+</kw>
+<status status="PASS" starttime="20220822 17:50:37.310" endtime="20220822 17:50:37.474"/>
+</kw>
+<kw name="Press A Button/Element" library="common">
+<arg>${CurrencySelect}</arg>
+<kw name="Wait For Element" library="common">
+<arg>${Locator}</arg>
+<kw name="Wait Until Page Loads" library="common">
+<kw name="Wait Until Keyword Succeeds" library="BuiltIn">
+<arg>5x</arg>
+<arg>1s</arg>
+<arg>Wait For Condition</arg>
+<arg>return document.readyState === 'complete'</arg>
+<arg>${Timeout}</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<kw name="Wait For Condition" library="SeleniumLibrary">
+<arg>return document.readyState === 'complete'</arg>
+<arg>${Timeout}</arg>
+<doc>Waits until ``condition`` is true or ``timeout`` expires.</doc>
+<status status="PASS" starttime="20220822 17:50:37.476" endtime="20220822 17:50:37.481"/>
+</kw>
+<status status="PASS" starttime="20220822 17:50:37.476" endtime="20220822 17:50:37.481"/>
+</kw>
+<status status="PASS" starttime="20220822 17:50:37.475" endtime="20220822 17:50:37.484"/>
+</kw>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<arg>${Locator}</arg>
+<arg>${Timeout}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" starttime="20220822 17:50:37.484" endtime="20220822 17:50:37.504"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${Locator}</arg>
+<arg>${Timeout}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20220822 17:50:37.504" endtime="20220822 17:50:37.526"/>
+</kw>
+<kw name="Wait Until Element Is Enabled" library="SeleniumLibrary">
+<arg>${Locator}</arg>
+<arg>${Timeout}</arg>
+<doc>Waits until the element ``locator`` is enabled.</doc>
+<status status="PASS" starttime="20220822 17:50:37.526" endtime="20220822 17:50:37.561"/>
+</kw>
+<status status="PASS" starttime="20220822 17:50:37.475" endtime="20220822 17:50:37.561"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${Locator}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220822 17:50:37.562" level="INFO">Clicking element '//*[contains(text(),'Dollar') and @value='Dollar']'.</msg>
+<status status="PASS" starttime="20220822 17:50:37.561" endtime="20220822 17:50:37.602"/>
+</kw>
+<status status="PASS" starttime="20220822 17:50:37.474" endtime="20220822 17:50:37.602"/>
+</kw>
+<kw name="Press A Button/Element" library="common">
+<arg>${Manager_ProcessButton}</arg>
+<kw name="Wait For Element" library="common">
+<arg>${Locator}</arg>
+<kw name="Wait Until Page Loads" library="common">
+<kw name="Wait Until Keyword Succeeds" library="BuiltIn">
+<arg>5x</arg>
+<arg>1s</arg>
+<arg>Wait For Condition</arg>
+<arg>return document.readyState === 'complete'</arg>
+<arg>${Timeout}</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<kw name="Wait For Condition" library="SeleniumLibrary">
+<arg>return document.readyState === 'complete'</arg>
+<arg>${Timeout}</arg>
+<doc>Waits until ``condition`` is true or ``timeout`` expires.</doc>
+<status status="PASS" starttime="20220822 17:50:37.605" endtime="20220822 17:50:37.610"/>
+</kw>
+<status status="PASS" starttime="20220822 17:50:37.605" endtime="20220822 17:50:37.610"/>
+</kw>
+<status status="PASS" starttime="20220822 17:50:37.604" endtime="20220822 17:50:37.611"/>
+</kw>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<arg>${Locator}</arg>
+<arg>${Timeout}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" starttime="20220822 17:50:37.611" endtime="20220822 17:50:37.625"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${Locator}</arg>
+<arg>${Timeout}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20220822 17:50:37.626" endtime="20220822 17:50:37.646"/>
+</kw>
+<kw name="Wait Until Element Is Enabled" library="SeleniumLibrary">
+<arg>${Locator}</arg>
+<arg>${Timeout}</arg>
+<doc>Waits until the element ``locator`` is enabled.</doc>
+<status status="PASS" starttime="20220822 17:50:37.646" endtime="20220822 17:50:37.666"/>
+</kw>
+<status status="PASS" starttime="20220822 17:50:37.603" endtime="20220822 17:50:37.666"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${Locator}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220822 17:50:37.666" level="INFO">Clicking element '//*[@type='submit' and contains(text(),'Process')]'.</msg>
+<status status="PASS" starttime="20220822 17:50:37.666" endtime="20220822 17:50:37.729"/>
+</kw>
+<status status="PASS" starttime="20220822 17:50:37.602" endtime="20220822 17:50:37.730"/>
+</kw>
+<kw name="Get New Account Number" library="GlobalSQA_Manager_HomePage">
+<kw name="Handle Alert" library="SeleniumLibrary">
+<var>${Response}</var>
+<arg>action=ACCEPT</arg>
+<doc>Handles the current alert and returns its message.</doc>
+<msg timestamp="20220822 17:50:37.731" level="INFO">HANDLE::&lt;class 'NoneType'&gt;::None</msg>
+<msg timestamp="20220822 17:50:37.740" level="INFO">${Response} = Account created successfully with account Number :1016</msg>
+<status status="PASS" starttime="20220822 17:50:37.731" endtime="20220822 17:50:37.740"/>
+</kw>
+<kw name="Remove String" library="String">
+<var>${NewAccountNumber}</var>
+<arg>${Response}</arg>
+<arg>Account created successfully with account Number :</arg>
+<doc>Removes all ``removables`` from the given ``string``.</doc>
+<msg timestamp="20220822 17:50:37.741" level="INFO">${NewAccountNumber} = 1016</msg>
+<status status="PASS" starttime="20220822 17:50:37.741" endtime="20220822 17:50:37.742"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${NewAccountNumber}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220822 17:50:37.742" level="INFO">1016</msg>
+<status status="PASS" starttime="20220822 17:50:37.742" endtime="20220822 17:50:37.743"/>
+</kw>
+<status status="PASS" starttime="20220822 17:50:37.730" endtime="20220822 17:50:37.743"/>
+</kw>
+<status status="PASS" starttime="20220822 17:50:35.202" endtime="20220822 17:50:37.744"/>
+</kw>
+<kw name="Select Home Page Button" library="GlobalSQA_MainHome">
+<kw name="Press A Button/Element" library="common">
+<arg>${HomePageButton}</arg>
+<kw name="Wait For Element" library="common">
+<arg>${Locator}</arg>
+<kw name="Wait Until Page Loads" library="common">
+<kw name="Wait Until Keyword Succeeds" library="BuiltIn">
+<arg>5x</arg>
+<arg>1s</arg>
+<arg>Wait For Condition</arg>
+<arg>return document.readyState === 'complete'</arg>
+<arg>${Timeout}</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<kw name="Wait For Condition" library="SeleniumLibrary">
+<arg>return document.readyState === 'complete'</arg>
+<arg>${Timeout}</arg>
+<doc>Waits until ``condition`` is true or ``timeout`` expires.</doc>
+<status status="PASS" starttime="20220822 17:50:37.754" endtime="20220822 17:50:37.775"/>
+</kw>
+<status status="PASS" starttime="20220822 17:50:37.753" endtime="20220822 17:50:37.775"/>
+</kw>
+<status status="PASS" starttime="20220822 17:50:37.752" endtime="20220822 17:50:37.776"/>
+</kw>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<arg>${Locator}</arg>
+<arg>${Timeout}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" starttime="20220822 17:50:37.776" endtime="20220822 17:50:37.792"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${Locator}</arg>
+<arg>${Timeout}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20220822 17:50:37.792" endtime="20220822 17:50:37.814"/>
+</kw>
+<kw name="Wait Until Element Is Enabled" library="SeleniumLibrary">
+<arg>${Locator}</arg>
+<arg>${Timeout}</arg>
+<doc>Waits until the element ``locator`` is enabled.</doc>
+<status status="PASS" starttime="20220822 17:50:37.814" endtime="20220822 17:50:37.847"/>
+</kw>
+<status status="PASS" starttime="20220822 17:50:37.749" endtime="20220822 17:50:37.847"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${Locator}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220822 17:50:37.848" level="INFO">Clicking element '//*[contains(text(),'Home')]'.</msg>
+<status status="PASS" starttime="20220822 17:50:37.848" endtime="20220822 17:50:37.903"/>
+</kw>
+<status status="PASS" starttime="20220822 17:50:37.748" endtime="20220822 17:50:37.904"/>
+</kw>
+<status status="PASS" starttime="20220822 17:50:37.747" endtime="20220822 17:50:37.905"/>
+</kw>
+<kw name="Select Customer Login" library="GlobalSQA_MainHome">
 <kw name="Press A Button/Element" library="common">
 <arg>${CustomerButton}</arg>
-<msg timestamp="20220819 14:32:24.716" level="FAIL">Variable '${CustomerButton}' not found.</msg>
-<status status="FAIL" starttime="20220819 14:32:24.714" endtime="20220819 14:32:24.716"/>
+<kw name="Wait For Element" library="common">
+<arg>${Locator}</arg>
+<kw name="Wait Until Page Loads" library="common">
+<kw name="Wait Until Keyword Succeeds" library="BuiltIn">
+<arg>5x</arg>
+<arg>1s</arg>
+<arg>Wait For Condition</arg>
+<arg>return document.readyState === 'complete'</arg>
+<arg>${Timeout}</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<kw name="Wait For Condition" library="SeleniumLibrary">
+<arg>return document.readyState === 'complete'</arg>
+<arg>${Timeout}</arg>
+<doc>Waits until ``condition`` is true or ``timeout`` expires.</doc>
+<status status="PASS" starttime="20220822 17:50:37.910" endtime="20220822 17:50:37.914"/>
+</kw>
+<status status="PASS" starttime="20220822 17:50:37.909" endtime="20220822 17:50:37.914"/>
+</kw>
+<status status="PASS" starttime="20220822 17:50:37.909" endtime="20220822 17:50:37.914"/>
+</kw>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<arg>${Locator}</arg>
+<arg>${Timeout}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" starttime="20220822 17:50:37.915" endtime="20220822 17:50:37.928"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${Locator}</arg>
+<arg>${Timeout}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20220822 17:50:37.928" endtime="20220822 17:50:37.949"/>
+</kw>
+<kw name="Wait Until Element Is Enabled" library="SeleniumLibrary">
+<arg>${Locator}</arg>
+<arg>${Timeout}</arg>
+<doc>Waits until the element ``locator`` is enabled.</doc>
+<status status="PASS" starttime="20220822 17:50:37.950" endtime="20220822 17:50:37.978"/>
+</kw>
+<status status="PASS" starttime="20220822 17:50:37.908" endtime="20220822 17:50:37.978"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${Locator}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220822 17:50:37.979" level="INFO">Clicking element '//*[contains(text(),'Customer Login')]'.</msg>
+<status status="PASS" starttime="20220822 17:50:37.978" endtime="20220822 17:50:38.025"/>
+</kw>
+<status status="PASS" starttime="20220822 17:50:37.907" endtime="20220822 17:50:38.026"/>
 </kw>
 <kw name="Wait For Element" library="common">
 <arg>${CustomerPageVerify}</arg>
-<status status="NOT RUN" starttime="20220819 14:32:24.716" endtime="20220819 14:32:24.717"/>
+<kw name="Wait Until Page Loads" library="common">
+<kw name="Wait Until Keyword Succeeds" library="BuiltIn">
+<arg>5x</arg>
+<arg>1s</arg>
+<arg>Wait For Condition</arg>
+<arg>return document.readyState === 'complete'</arg>
+<arg>${Timeout}</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<kw name="Wait For Condition" library="SeleniumLibrary">
+<arg>return document.readyState === 'complete'</arg>
+<arg>${Timeout}</arg>
+<doc>Waits until ``condition`` is true or ``timeout`` expires.</doc>
+<status status="PASS" starttime="20220822 17:50:38.027" endtime="20220822 17:50:38.032"/>
 </kw>
-<status status="FAIL" starttime="20220819 14:32:24.714" endtime="20220819 14:32:24.717"/>
+<status status="PASS" starttime="20220822 17:50:38.027" endtime="20220822 17:50:38.032"/>
 </kw>
-<kw name="Select Customer" library="GlobalSQA-CustomerPage">
-<status status="NOT RUN" starttime="20220819 14:32:24.717" endtime="20220819 14:32:24.717"/>
+<status status="PASS" starttime="20220822 17:50:38.026" endtime="20220822 17:50:38.032"/>
 </kw>
-<kw name="Select Account Number" library="GlobalSQA-CustomerAccountPage">
-<status status="NOT RUN" starttime="20220819 14:32:24.718" endtime="20220819 14:32:24.718"/>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<arg>${Locator}</arg>
+<arg>${Timeout}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" starttime="20220822 17:50:38.033" endtime="20220822 17:50:38.466"/>
 </kw>
-<kw name="Enter Deposit Amount and Confirm" library="GlobalSQA-CustomerAccountPage">
-<status status="NOT RUN" starttime="20220819 14:32:24.718" endtime="20220819 14:32:24.718"/>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${Locator}</arg>
+<arg>${Timeout}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20220822 17:50:38.466" endtime="20220822 17:50:38.489"/>
 </kw>
-<kw name="Select Home Page Button" library="GlobalSQA-Home">
-<status status="NOT RUN" starttime="20220819 14:32:24.719" endtime="20220819 14:32:24.719"/>
+<kw name="Wait Until Element Is Enabled" library="SeleniumLibrary">
+<arg>${Locator}</arg>
+<arg>${Timeout}</arg>
+<doc>Waits until the element ``locator`` is enabled.</doc>
+<status status="PASS" starttime="20220822 17:50:38.490" endtime="20220822 17:50:38.518"/>
 </kw>
-<kw name="Exit Browser" library="common">
-<status status="NOT RUN" starttime="20220819 14:32:24.719" endtime="20220819 14:32:24.719"/>
+<status status="PASS" starttime="20220822 17:50:38.026" endtime="20220822 17:50:38.519"/>
 </kw>
-<status status="FAIL" starttime="20220819 14:32:21.767" endtime="20220819 14:32:24.720">Variable '${CustomerButton}' not found.</status>
+<status status="PASS" starttime="20220822 17:50:37.906" endtime="20220822 17:50:38.519"/>
+</kw>
+<kw name="Select Customer" library="GlobalSQA_Customer_HomePage">
+<kw name="Press A Button/Element" library="common">
+<arg>${CustomerDropDownActiate}</arg>
+<kw name="Wait For Element" library="common">
+<arg>${Locator}</arg>
+<kw name="Wait Until Page Loads" library="common">
+<kw name="Wait Until Keyword Succeeds" library="BuiltIn">
+<arg>5x</arg>
+<arg>1s</arg>
+<arg>Wait For Condition</arg>
+<arg>return document.readyState === 'complete'</arg>
+<arg>${Timeout}</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<kw name="Wait For Condition" library="SeleniumLibrary">
+<arg>return document.readyState === 'complete'</arg>
+<arg>${Timeout}</arg>
+<doc>Waits until ``condition`` is true or ``timeout`` expires.</doc>
+<status status="PASS" starttime="20220822 17:50:38.522" endtime="20220822 17:50:38.527"/>
+</kw>
+<status status="PASS" starttime="20220822 17:50:38.522" endtime="20220822 17:50:38.527"/>
+</kw>
+<status status="PASS" starttime="20220822 17:50:38.521" endtime="20220822 17:50:38.527"/>
+</kw>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<arg>${Locator}</arg>
+<arg>${Timeout}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" starttime="20220822 17:50:38.528" endtime="20220822 17:50:38.533"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${Locator}</arg>
+<arg>${Timeout}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20220822 17:50:38.533" endtime="20220822 17:50:38.560"/>
+</kw>
+<kw name="Wait Until Element Is Enabled" library="SeleniumLibrary">
+<arg>${Locator}</arg>
+<arg>${Timeout}</arg>
+<doc>Waits until the element ``locator`` is enabled.</doc>
+<status status="PASS" starttime="20220822 17:50:38.560" endtime="20220822 17:50:38.582"/>
+</kw>
+<status status="PASS" starttime="20220822 17:50:38.521" endtime="20220822 17:50:38.582"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${Locator}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220822 17:50:38.582" level="INFO">Clicking element '//*[@id='userSelect']'.</msg>
+<status status="PASS" starttime="20220822 17:50:38.582" endtime="20220822 17:50:38.662"/>
+</kw>
+<status status="PASS" starttime="20220822 17:50:38.520" endtime="20220822 17:50:38.663"/>
+</kw>
+<kw name="Press A Button/Element" library="common">
+<arg>${SelectName}</arg>
+<kw name="Wait For Element" library="common">
+<arg>${Locator}</arg>
+<kw name="Wait Until Page Loads" library="common">
+<kw name="Wait Until Keyword Succeeds" library="BuiltIn">
+<arg>5x</arg>
+<arg>1s</arg>
+<arg>Wait For Condition</arg>
+<arg>return document.readyState === 'complete'</arg>
+<arg>${Timeout}</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<kw name="Wait For Condition" library="SeleniumLibrary">
+<arg>return document.readyState === 'complete'</arg>
+<arg>${Timeout}</arg>
+<doc>Waits until ``condition`` is true or ``timeout`` expires.</doc>
+<status status="PASS" starttime="20220822 17:50:38.668" endtime="20220822 17:50:38.677"/>
+</kw>
+<status status="PASS" starttime="20220822 17:50:38.667" endtime="20220822 17:50:38.677"/>
+</kw>
+<status status="PASS" starttime="20220822 17:50:38.666" endtime="20220822 17:50:38.677"/>
+</kw>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<arg>${Locator}</arg>
+<arg>${Timeout}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" starttime="20220822 17:50:38.678" endtime="20220822 17:50:38.695"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${Locator}</arg>
+<arg>${Timeout}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20220822 17:50:38.695" endtime="20220822 17:50:38.721"/>
+</kw>
+<kw name="Wait Until Element Is Enabled" library="SeleniumLibrary">
+<arg>${Locator}</arg>
+<arg>${Timeout}</arg>
+<doc>Waits until the element ``locator`` is enabled.</doc>
+<status status="PASS" starttime="20220822 17:50:38.721" endtime="20220822 17:50:38.756"/>
+</kw>
+<status status="PASS" starttime="20220822 17:50:38.664" endtime="20220822 17:50:38.757"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${Locator}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220822 17:50:38.757" level="INFO">Clicking element '//*[contains(text(),'Harry Potter')]'.</msg>
+<status status="PASS" starttime="20220822 17:50:38.757" endtime="20220822 17:50:38.799"/>
+</kw>
+<status status="PASS" starttime="20220822 17:50:38.663" endtime="20220822 17:50:38.800"/>
+</kw>
+<kw name="Press A Button/Element" library="common">
+<arg>${LoginButton}</arg>
+<kw name="Wait For Element" library="common">
+<arg>${Locator}</arg>
+<kw name="Wait Until Page Loads" library="common">
+<kw name="Wait Until Keyword Succeeds" library="BuiltIn">
+<arg>5x</arg>
+<arg>1s</arg>
+<arg>Wait For Condition</arg>
+<arg>return document.readyState === 'complete'</arg>
+<arg>${Timeout}</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<kw name="Wait For Condition" library="SeleniumLibrary">
+<arg>return document.readyState === 'complete'</arg>
+<arg>${Timeout}</arg>
+<doc>Waits until ``condition`` is true or ``timeout`` expires.</doc>
+<status status="PASS" starttime="20220822 17:50:38.803" endtime="20220822 17:50:38.809"/>
+</kw>
+<status status="PASS" starttime="20220822 17:50:38.802" endtime="20220822 17:50:38.810"/>
+</kw>
+<status status="PASS" starttime="20220822 17:50:38.802" endtime="20220822 17:50:38.810"/>
+</kw>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<arg>${Locator}</arg>
+<arg>${Timeout}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" starttime="20220822 17:50:38.810" endtime="20220822 17:50:38.823"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${Locator}</arg>
+<arg>${Timeout}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20220822 17:50:38.823" endtime="20220822 17:50:38.844"/>
+</kw>
+<kw name="Wait Until Element Is Enabled" library="SeleniumLibrary">
+<arg>${Locator}</arg>
+<arg>${Timeout}</arg>
+<doc>Waits until the element ``locator`` is enabled.</doc>
+<status status="PASS" starttime="20220822 17:50:38.844" endtime="20220822 17:50:38.866"/>
+</kw>
+<status status="PASS" starttime="20220822 17:50:38.801" endtime="20220822 17:50:38.866"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${Locator}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220822 17:50:38.866" level="INFO">Clicking element '//*[contains(text(),'Login')]'.</msg>
+<status status="PASS" starttime="20220822 17:50:38.866" endtime="20220822 17:50:38.938"/>
+</kw>
+<status status="PASS" starttime="20220822 17:50:38.800" endtime="20220822 17:50:38.938"/>
+</kw>
+<status status="PASS" starttime="20220822 17:50:38.520" endtime="20220822 17:50:38.939"/>
+</kw>
+<kw name="Select Account Number" library="GlobalSQA_Customer_AccountPage">
+<kw name="Press A Button/Element" library="common">
+<arg>${Cus_AccountNoDropDown}</arg>
+<kw name="Wait For Element" library="common">
+<arg>${Locator}</arg>
+<kw name="Wait Until Page Loads" library="common">
+<kw name="Wait Until Keyword Succeeds" library="BuiltIn">
+<arg>5x</arg>
+<arg>1s</arg>
+<arg>Wait For Condition</arg>
+<arg>return document.readyState === 'complete'</arg>
+<arg>${Timeout}</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<kw name="Wait For Condition" library="SeleniumLibrary">
+<arg>return document.readyState === 'complete'</arg>
+<arg>${Timeout}</arg>
+<doc>Waits until ``condition`` is true or ``timeout`` expires.</doc>
+<status status="PASS" starttime="20220822 17:50:38.942" endtime="20220822 17:50:38.947"/>
+</kw>
+<status status="PASS" starttime="20220822 17:50:38.941" endtime="20220822 17:50:38.947"/>
+</kw>
+<status status="PASS" starttime="20220822 17:50:38.941" endtime="20220822 17:50:38.948"/>
+</kw>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<arg>${Locator}</arg>
+<arg>${Timeout}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" starttime="20220822 17:50:38.948" endtime="20220822 17:50:39.375"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${Locator}</arg>
+<arg>${Timeout}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20220822 17:50:39.375" endtime="20220822 17:50:39.407"/>
+</kw>
+<kw name="Wait Until Element Is Enabled" library="SeleniumLibrary">
+<arg>${Locator}</arg>
+<arg>${Timeout}</arg>
+<doc>Waits until the element ``locator`` is enabled.</doc>
+<status status="PASS" starttime="20220822 17:50:39.407" endtime="20220822 17:50:39.431"/>
+</kw>
+<status status="PASS" starttime="20220822 17:50:38.940" endtime="20220822 17:50:39.431"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${Locator}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220822 17:50:39.431" level="INFO">Clicking element '//*[@id='accountSelect']'.</msg>
+<status status="PASS" starttime="20220822 17:50:39.431" endtime="20220822 17:50:39.536"/>
+</kw>
+<status status="PASS" starttime="20220822 17:50:38.940" endtime="20220822 17:50:39.537"/>
+</kw>
+<kw name="Press A Button/Element" library="common">
+<arg>${SelectAccountNo}</arg>
+<kw name="Wait For Element" library="common">
+<arg>${Locator}</arg>
+<kw name="Wait Until Page Loads" library="common">
+<kw name="Wait Until Keyword Succeeds" library="BuiltIn">
+<arg>5x</arg>
+<arg>1s</arg>
+<arg>Wait For Condition</arg>
+<arg>return document.readyState === 'complete'</arg>
+<arg>${Timeout}</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<kw name="Wait For Condition" library="SeleniumLibrary">
+<arg>return document.readyState === 'complete'</arg>
+<arg>${Timeout}</arg>
+<doc>Waits until ``condition`` is true or ``timeout`` expires.</doc>
+<status status="PASS" starttime="20220822 17:50:39.544" endtime="20220822 17:50:39.554"/>
+</kw>
+<status status="PASS" starttime="20220822 17:50:39.542" endtime="20220822 17:50:39.554"/>
+</kw>
+<status status="PASS" starttime="20220822 17:50:39.541" endtime="20220822 17:50:39.554"/>
+</kw>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<arg>${Locator}</arg>
+<arg>${Timeout}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" starttime="20220822 17:50:39.555" endtime="20220822 17:50:39.571"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${Locator}</arg>
+<arg>${Timeout}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20220822 17:50:39.571" endtime="20220822 17:50:39.595"/>
+</kw>
+<kw name="Wait Until Element Is Enabled" library="SeleniumLibrary">
+<arg>${Locator}</arg>
+<arg>${Timeout}</arg>
+<doc>Waits until the element ``locator`` is enabled.</doc>
+<status status="PASS" starttime="20220822 17:50:39.595" endtime="20220822 17:50:39.630"/>
+</kw>
+<status status="PASS" starttime="20220822 17:50:39.539" endtime="20220822 17:50:39.630"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${Locator}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220822 17:50:39.631" level="INFO">Clicking element '//*[@label='1005']'.</msg>
+<status status="PASS" starttime="20220822 17:50:39.630" endtime="20220822 17:50:39.666"/>
+</kw>
+<status status="PASS" starttime="20220822 17:50:39.538" endtime="20220822 17:50:39.666"/>
+</kw>
+<status status="PASS" starttime="20220822 17:50:38.939" endtime="20220822 17:50:39.667"/>
+</kw>
+<kw name="Enter Deposit Amount and Confirm" library="GlobalSQA_Customer_AccountPage">
+<kw name="Press A Button/Element" library="common">
+<arg>${Cus_DepositButton}</arg>
+<kw name="Wait For Element" library="common">
+<arg>${Locator}</arg>
+<kw name="Wait Until Page Loads" library="common">
+<kw name="Wait Until Keyword Succeeds" library="BuiltIn">
+<arg>5x</arg>
+<arg>1s</arg>
+<arg>Wait For Condition</arg>
+<arg>return document.readyState === 'complete'</arg>
+<arg>${Timeout}</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<kw name="Wait For Condition" library="SeleniumLibrary">
+<arg>return document.readyState === 'complete'</arg>
+<arg>${Timeout}</arg>
+<doc>Waits until ``condition`` is true or ``timeout`` expires.</doc>
+<status status="PASS" starttime="20220822 17:50:39.673" endtime="20220822 17:50:39.678"/>
+</kw>
+<status status="PASS" starttime="20220822 17:50:39.672" endtime="20220822 17:50:39.678"/>
+</kw>
+<status status="PASS" starttime="20220822 17:50:39.671" endtime="20220822 17:50:39.678"/>
+</kw>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<arg>${Locator}</arg>
+<arg>${Timeout}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" starttime="20220822 17:50:39.679" endtime="20220822 17:50:39.692"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${Locator}</arg>
+<arg>${Timeout}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20220822 17:50:39.692" endtime="20220822 17:50:39.713"/>
+</kw>
+<kw name="Wait Until Element Is Enabled" library="SeleniumLibrary">
+<arg>${Locator}</arg>
+<arg>${Timeout}</arg>
+<doc>Waits until the element ``locator`` is enabled.</doc>
+<status status="PASS" starttime="20220822 17:50:39.714" endtime="20220822 17:50:39.748"/>
+</kw>
+<status status="PASS" starttime="20220822 17:50:39.670" endtime="20220822 17:50:39.748"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${Locator}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220822 17:50:39.748" level="INFO">Clicking element '//*[@ng-click='deposit()' and contains(text(),'Deposit')]'.</msg>
+<status status="PASS" starttime="20220822 17:50:39.748" endtime="20220822 17:50:39.836"/>
+</kw>
+<status status="PASS" starttime="20220822 17:50:39.669" endtime="20220822 17:50:39.836"/>
+</kw>
+<kw name="Input in Textbox" library="common">
+<arg>${AmountInput}</arg>
+<arg>${DepositAmount}</arg>
+<kw name="Wait For Element" library="common">
+<arg>${Locator}</arg>
+<kw name="Wait Until Page Loads" library="common">
+<kw name="Wait Until Keyword Succeeds" library="BuiltIn">
+<arg>5x</arg>
+<arg>1s</arg>
+<arg>Wait For Condition</arg>
+<arg>return document.readyState === 'complete'</arg>
+<arg>${Timeout}</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<kw name="Wait For Condition" library="SeleniumLibrary">
+<arg>return document.readyState === 'complete'</arg>
+<arg>${Timeout}</arg>
+<doc>Waits until ``condition`` is true or ``timeout`` expires.</doc>
+<status status="PASS" starttime="20220822 17:50:39.838" endtime="20220822 17:50:39.843"/>
+</kw>
+<status status="PASS" starttime="20220822 17:50:39.838" endtime="20220822 17:50:39.843"/>
+</kw>
+<status status="PASS" starttime="20220822 17:50:39.838" endtime="20220822 17:50:39.843"/>
+</kw>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<arg>${Locator}</arg>
+<arg>${Timeout}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" starttime="20220822 17:50:39.844" endtime="20220822 17:50:40.075"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${Locator}</arg>
+<arg>${Timeout}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20220822 17:50:40.075" endtime="20220822 17:50:40.097"/>
+</kw>
+<kw name="Wait Until Element Is Enabled" library="SeleniumLibrary">
+<arg>${Locator}</arg>
+<arg>${Timeout}</arg>
+<doc>Waits until the element ``locator`` is enabled.</doc>
+<status status="PASS" starttime="20220822 17:50:40.097" endtime="20220822 17:50:40.115"/>
+</kw>
+<status status="PASS" starttime="20220822 17:50:39.837" endtime="20220822 17:50:40.115"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${Locator}</arg>
+<arg>${text}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220822 17:50:40.115" level="INFO">Typing text '5000' into text field '//*[@placeholder='amount']'.</msg>
+<status status="PASS" starttime="20220822 17:50:40.115" endtime="20220822 17:50:40.231"/>
+</kw>
+<status status="PASS" starttime="20220822 17:50:39.837" endtime="20220822 17:50:40.231"/>
+</kw>
+<kw name="Press A Button/Element" library="common">
+<arg>${Cus_ConfirmDepositButton}</arg>
+<kw name="Wait For Element" library="common">
+<arg>${Locator}</arg>
+<kw name="Wait Until Page Loads" library="common">
+<kw name="Wait Until Keyword Succeeds" library="BuiltIn">
+<arg>5x</arg>
+<arg>1s</arg>
+<arg>Wait For Condition</arg>
+<arg>return document.readyState === 'complete'</arg>
+<arg>${Timeout}</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<kw name="Wait For Condition" library="SeleniumLibrary">
+<arg>return document.readyState === 'complete'</arg>
+<arg>${Timeout}</arg>
+<doc>Waits until ``condition`` is true or ``timeout`` expires.</doc>
+<status status="PASS" starttime="20220822 17:50:40.231" endtime="20220822 17:50:40.231"/>
+</kw>
+<status status="PASS" starttime="20220822 17:50:40.231" endtime="20220822 17:50:40.231"/>
+</kw>
+<status status="PASS" starttime="20220822 17:50:40.231" endtime="20220822 17:50:40.231"/>
+</kw>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<arg>${Locator}</arg>
+<arg>${Timeout}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" starttime="20220822 17:50:40.231" endtime="20220822 17:50:40.257"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${Locator}</arg>
+<arg>${Timeout}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20220822 17:50:40.257" endtime="20220822 17:50:40.279"/>
+</kw>
+<kw name="Wait Until Element Is Enabled" library="SeleniumLibrary">
+<arg>${Locator}</arg>
+<arg>${Timeout}</arg>
+<doc>Waits until the element ``locator`` is enabled.</doc>
+<status status="PASS" starttime="20220822 17:50:40.280" endtime="20220822 17:50:40.311"/>
+</kw>
+<status status="PASS" starttime="20220822 17:50:40.231" endtime="20220822 17:50:40.312"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${Locator}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220822 17:50:40.312" level="INFO">Clicking element '//*[@type='submit' and contains(text(),'Deposit')]'.</msg>
+<status status="PASS" starttime="20220822 17:50:40.312" endtime="20220822 17:50:40.379"/>
+</kw>
+<status status="PASS" starttime="20220822 17:50:40.231" endtime="20220822 17:50:40.379"/>
+</kw>
+<status status="PASS" starttime="20220822 17:50:39.668" endtime="20220822 17:50:40.379"/>
+</kw>
+<kw name="Enter Withdraw Amount and Confirm" library="GlobalSQA_Customer_AccountPage">
+<kw name="Press A Button/Element" library="common">
+<arg>${Cus_WithdrawlButton}</arg>
+<kw name="Wait For Element" library="common">
+<arg>${Locator}</arg>
+<kw name="Wait Until Page Loads" library="common">
+<kw name="Wait Until Keyword Succeeds" library="BuiltIn">
+<arg>5x</arg>
+<arg>1s</arg>
+<arg>Wait For Condition</arg>
+<arg>return document.readyState === 'complete'</arg>
+<arg>${Timeout}</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<kw name="Wait For Condition" library="SeleniumLibrary">
+<arg>return document.readyState === 'complete'</arg>
+<arg>${Timeout}</arg>
+<doc>Waits until ``condition`` is true or ``timeout`` expires.</doc>
+<status status="PASS" starttime="20220822 17:50:40.386" endtime="20220822 17:50:40.391"/>
+</kw>
+<status status="PASS" starttime="20220822 17:50:40.385" endtime="20220822 17:50:40.391"/>
+</kw>
+<status status="PASS" starttime="20220822 17:50:40.383" endtime="20220822 17:50:40.391"/>
+</kw>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<arg>${Locator}</arg>
+<arg>${Timeout}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" starttime="20220822 17:50:40.391" endtime="20220822 17:50:40.405"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${Locator}</arg>
+<arg>${Timeout}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20220822 17:50:40.405" endtime="20220822 17:50:40.426"/>
+</kw>
+<kw name="Wait Until Element Is Enabled" library="SeleniumLibrary">
+<arg>${Locator}</arg>
+<arg>${Timeout}</arg>
+<doc>Waits until the element ``locator`` is enabled.</doc>
+<status status="PASS" starttime="20220822 17:50:40.427" endtime="20220822 17:50:40.457"/>
+</kw>
+<status status="PASS" starttime="20220822 17:50:40.381" endtime="20220822 17:50:40.457"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${Locator}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220822 17:50:40.458" level="INFO">Clicking element '//*[contains(text(),'Withdrawl')]'.</msg>
+<status status="PASS" starttime="20220822 17:50:40.458" endtime="20220822 17:50:40.519"/>
+</kw>
+<status status="PASS" starttime="20220822 17:50:40.381" endtime="20220822 17:50:40.519"/>
+</kw>
+<kw name="Input in Textbox" library="common">
+<arg>${AmountInput}</arg>
+<arg>${WithdrawAmount}</arg>
+<kw name="Wait For Element" library="common">
+<arg>${Locator}</arg>
+<kw name="Wait Until Page Loads" library="common">
+<kw name="Wait Until Keyword Succeeds" library="BuiltIn">
+<arg>5x</arg>
+<arg>1s</arg>
+<arg>Wait For Condition</arg>
+<arg>return document.readyState === 'complete'</arg>
+<arg>${Timeout}</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<kw name="Wait For Condition" library="SeleniumLibrary">
+<arg>return document.readyState === 'complete'</arg>
+<arg>${Timeout}</arg>
+<doc>Waits until ``condition`` is true or ``timeout`` expires.</doc>
+<status status="PASS" starttime="20220822 17:50:40.522" endtime="20220822 17:50:40.527"/>
+</kw>
+<status status="PASS" starttime="20220822 17:50:40.521" endtime="20220822 17:50:40.527"/>
+</kw>
+<status status="PASS" starttime="20220822 17:50:40.521" endtime="20220822 17:50:40.527"/>
+</kw>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<arg>${Locator}</arg>
+<arg>${Timeout}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" starttime="20220822 17:50:40.528" endtime="20220822 17:50:40.540"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${Locator}</arg>
+<arg>${Timeout}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20220822 17:50:40.541" endtime="20220822 17:50:40.563"/>
+</kw>
+<kw name="Wait Until Element Is Enabled" library="SeleniumLibrary">
+<arg>${Locator}</arg>
+<arg>${Timeout}</arg>
+<doc>Waits until the element ``locator`` is enabled.</doc>
+<status status="PASS" starttime="20220822 17:50:40.564" endtime="20220822 17:50:40.592"/>
+</kw>
+<status status="PASS" starttime="20220822 17:50:40.520" endtime="20220822 17:50:40.592"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${Locator}</arg>
+<arg>${text}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220822 17:50:40.593" level="INFO">Typing text '4999' into text field '//*[@placeholder='amount']'.</msg>
+<status status="PASS" starttime="20220822 17:50:40.592" endtime="20220822 17:50:40.678"/>
+</kw>
+<status status="PASS" starttime="20220822 17:50:40.519" endtime="20220822 17:50:40.678"/>
+</kw>
+<kw name="Press A Button/Element" library="common">
+<arg>${Cus_ConfirmWithdrawButton}</arg>
+<kw name="Wait For Element" library="common">
+<arg>${Locator}</arg>
+<kw name="Wait Until Page Loads" library="common">
+<kw name="Wait Until Keyword Succeeds" library="BuiltIn">
+<arg>5x</arg>
+<arg>1s</arg>
+<arg>Wait For Condition</arg>
+<arg>return document.readyState === 'complete'</arg>
+<arg>${Timeout}</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<kw name="Wait For Condition" library="SeleniumLibrary">
+<arg>return document.readyState === 'complete'</arg>
+<arg>${Timeout}</arg>
+<doc>Waits until ``condition`` is true or ``timeout`` expires.</doc>
+<status status="PASS" starttime="20220822 17:50:40.680" endtime="20220822 17:50:40.687"/>
+</kw>
+<status status="PASS" starttime="20220822 17:50:40.680" endtime="20220822 17:50:40.687"/>
+</kw>
+<status status="PASS" starttime="20220822 17:50:40.680" endtime="20220822 17:50:40.687"/>
+</kw>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<arg>${Locator}</arg>
+<arg>${Timeout}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" starttime="20220822 17:50:40.687" endtime="20220822 17:50:40.920"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${Locator}</arg>
+<arg>${Timeout}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20220822 17:50:40.921" endtime="20220822 17:50:40.942"/>
+</kw>
+<kw name="Wait Until Element Is Enabled" library="SeleniumLibrary">
+<arg>${Locator}</arg>
+<arg>${Timeout}</arg>
+<doc>Waits until the element ``locator`` is enabled.</doc>
+<status status="PASS" starttime="20220822 17:50:40.943" endtime="20220822 17:50:40.985"/>
+</kw>
+<status status="PASS" starttime="20220822 17:50:40.679" endtime="20220822 17:50:40.985"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${Locator}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220822 17:50:40.986" level="INFO">Clicking element '//*[@type='submit' and contains(text(),'Withdraw')]'.</msg>
+<status status="PASS" starttime="20220822 17:50:40.986" endtime="20220822 17:50:41.076"/>
+</kw>
+<status status="PASS" starttime="20220822 17:50:40.678" endtime="20220822 17:50:41.076"/>
+</kw>
+<status status="PASS" starttime="20220822 17:50:40.380" endtime="20220822 17:50:41.076"/>
+</kw>
+<kw name="Select Home Page Button" library="GlobalSQA_MainHome">
+<kw name="Press A Button/Element" library="common">
+<arg>${HomePageButton}</arg>
+<kw name="Wait For Element" library="common">
+<arg>${Locator}</arg>
+<kw name="Wait Until Page Loads" library="common">
+<kw name="Wait Until Keyword Succeeds" library="BuiltIn">
+<arg>5x</arg>
+<arg>1s</arg>
+<arg>Wait For Condition</arg>
+<arg>return document.readyState === 'complete'</arg>
+<arg>${Timeout}</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<kw name="Wait For Condition" library="SeleniumLibrary">
+<arg>return document.readyState === 'complete'</arg>
+<arg>${Timeout}</arg>
+<doc>Waits until ``condition`` is true or ``timeout`` expires.</doc>
+<status status="PASS" starttime="20220822 17:50:41.081" endtime="20220822 17:50:41.091"/>
+</kw>
+<status status="PASS" starttime="20220822 17:50:41.080" endtime="20220822 17:50:41.091"/>
+</kw>
+<status status="PASS" starttime="20220822 17:50:41.080" endtime="20220822 17:50:41.092"/>
+</kw>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<arg>${Locator}</arg>
+<arg>${Timeout}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" starttime="20220822 17:50:41.092" endtime="20220822 17:50:41.104"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${Locator}</arg>
+<arg>${Timeout}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20220822 17:50:41.104" endtime="20220822 17:50:41.116"/>
+</kw>
+<kw name="Wait Until Element Is Enabled" library="SeleniumLibrary">
+<arg>${Locator}</arg>
+<arg>${Timeout}</arg>
+<doc>Waits until the element ``locator`` is enabled.</doc>
+<status status="PASS" starttime="20220822 17:50:41.116" endtime="20220822 17:50:41.169"/>
+</kw>
+<status status="PASS" starttime="20220822 17:50:41.079" endtime="20220822 17:50:41.169"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${Locator}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220822 17:50:41.169" level="INFO">Clicking element '//*[contains(text(),'Home')]'.</msg>
+<status status="PASS" starttime="20220822 17:50:41.169" endtime="20220822 17:50:41.229"/>
+</kw>
+<status status="PASS" starttime="20220822 17:50:41.078" endtime="20220822 17:50:41.230"/>
+</kw>
+<status status="PASS" starttime="20220822 17:50:41.078" endtime="20220822 17:50:41.231"/>
+</kw>
+<kw name="Exit Browser" library="common" type="TEARDOWN">
+<kw name="Go Back" library="SeleniumLibrary">
+<doc>Simulates the user clicking the back button on their browser.</doc>
+<status status="PASS" starttime="20220822 17:50:41.233" endtime="20220822 17:50:41.256"/>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20220822 17:50:41.256" endtime="20220822 17:50:43.755"/>
+</kw>
+<status status="PASS" starttime="20220822 17:50:41.232" endtime="20220822 17:50:43.756"/>
+</kw>
+<status status="PASS" starttime="20220822 17:50:29.270" endtime="20220822 17:50:43.756"/>
 </test>
-<status status="FAIL" starttime="20220819 14:32:21.272" endtime="20220819 14:32:24.722"/>
+<status status="PASS" starttime="20220822 17:50:28.826" endtime="20220822 17:50:43.758"/>
 </suite>
 <statistics>
 <total>
-<stat pass="0" fail="1" skip="0">All Tests</stat>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
 </total>
 <tag>
 </tag>
 <suite>
-<stat pass="0" fail="1" skip="0" id="s1" name="GlobalSQA">GlobalSQA</stat>
+<stat pass="1" fail="0" skip="0" id="s1" name="GlobalSQA">GlobalSQA</stat>
 </suite>
 </statistics>
 <errors>
-<msg timestamp="20220819 14:32:21.335" level="ERROR">Error in file 'C:\Automation_Projects\RF_Automation\resource\GlobalSQA-Home.robot' on line 3: Processing variable file 'C:\Automation_Projects\RF_Automation\testdata\GlobalSQA\GlobalSQA_locators.py' failed: Importing variable file 'C:\Automation_Projects\RF_Automation\testdata\GlobalSQA\GlobalSQA_locators.py' failed: ModuleNotFoundError: No module named 'testdata'
-Traceback (most recent call last):
-  File "C:\Automation_Projects\RF_Automation\testdata\GlobalSQA\GlobalSQA_locators.py", line 3, in &lt;module&gt;
-    from testdata.GlobalSQA.GlobalSQA_testdata import *
-PYTHONPATH:
-  C:\Automation_Projects\RF_Automation\testdata\GlobalSQA
-  C:\Tools\Python\Scripts\robot.exe
-  C:\Tools\Python
-  C:\Tools\Python\python39.zip
-  C:\Tools\Python\DLLs
-  C:\Tools\Python\lib
-  C:\Tools\Python\lib\site-packages
-  /testdata/GlobalSQA</msg>
 </errors>
 </robot>

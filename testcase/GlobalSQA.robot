@@ -1,5 +1,5 @@
 *** Settings ***
-Resource    ../resource/GlobalSQA_MainHome.robot
+Resource    ../resource/GlobalSQA/GlobalSQA_MainHome.robot
 Test Setup        Launch Browser    ${browser}    ${url}
 Test Teardown     Exit Browser  
 

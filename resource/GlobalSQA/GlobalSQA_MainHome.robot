@@ -1,11 +1,11 @@
 *** Settings ***
-Variables   ../testdata/GlobalSQA/GlobalSQA_testdata.py
-Variables   ../testdata/GlobalSQA/GlobalSQA_locators.py
-Resource    ../resource/GlobalSQA_Customer_AccountPage.robot
-Resource    ../resource/GlobalSQA_Customer_HomePage.robot
-Resource    ../resource/GlobalSQA_MainHome.robot
-Resource    ../resource/GlobalSQA_Manager_HomePage.robot
-Resource    ../resource/common.robot    
+Variables   ../../testdata/testdata_GlobalSQA.py
+Variables   locator_GlobalSQA.py
+Resource    GlobalSQA_Customer_AccountPage.robot
+Resource    GlobalSQA_Customer_HomePage.robot
+Resource    GlobalSQA_MainHome.robot
+Resource    GlobalSQA_Manager_HomePage.robot
+Resource    ../common.robot    
 
 *** Keywords ***
 Select Customer Login
