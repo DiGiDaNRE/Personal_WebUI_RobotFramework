@@ -1,6 +1,6 @@
 *** Settings ***
-Variables   ../../testdata/testdata_GlobalSQA.py
-Variables   locator_GlobalSQA.py
+Variables   ../../testdata/GlobalSQA/testdata_GlobalSQA.py
+Variables   ../../testdata/GlobalSQA/locator_GlobalSQA.py
 Resource    GlobalSQA_Customer_AccountPage.robot
 Resource    GlobalSQA_Customer_HomePage.robot
 Resource    GlobalSQA_MainHome.robot
