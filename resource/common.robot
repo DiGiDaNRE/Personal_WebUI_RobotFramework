@@ -1,6 +1,7 @@
 *** Settings ***
 Library     SeleniumLibrary
 Library     Process 
+Library     String
 Variables   ../Global_Variables.py
 
 *** Keywords ***
@@ -70,3 +71,4 @@ Checkbox Select
     Wait For Element               ${Locator}
     Select Checkbox                ${Locator}
     Checkbox Should Be Selected    ${Locator}
+
