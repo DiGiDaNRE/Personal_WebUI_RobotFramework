@@ -1,10 +1,8 @@
 #CUSTOMER
     #Customer_HomePage
 CustomerName = "Harry Potter"
-
     #Customer_AccountPage
 AccountNumber = "1005"
-
         #Deposit
 DepositAmount = "5000"
         #Withdraw
