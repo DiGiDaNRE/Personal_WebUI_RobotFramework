@@ -1,4 +1,4 @@
-from GlobalSQA_testdata import *
+from Global_Variables import *
 
 #MainHome
 CustomerButton = "//*[contains(text(),'Customer Login')]"
