@@ -27,7 +27,6 @@ Cus_ConfirmDepositButton = "//*[@type='submit' and contains(text(),'Deposit')]"
     #Withdraw
 Cus_ConfirmWithdrawButton = "//*[@type='submit' and contains(text(),'Withdraw')]"
 
-
 #Manager_HomePage
 AddCustomerButton = "//*[contains(text(),'Add Customer')]"
 OpenAccountButton = "//*[contains(text(),'Open Account')]" 
