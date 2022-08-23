@@ -2,7 +2,9 @@
 Library     SeleniumLibrary
 Library     Process 
 Library     String
-Variables   ../Global_Variables.py
+
+*** Variables ***
+${Timeout}    60
 
 *** Keywords ***
 Launch Browser
