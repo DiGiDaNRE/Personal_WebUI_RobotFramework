@@ -1,8 +1,9 @@
 *** Settings ***
 Library     SeleniumLibrary
+Library     RequestsLibrary
+Library     Collections
 Library     Process 
 Library     String
-Library     Collections
 
 *** Variables ***
 ${Timeout}    60
@@ -75,8 +76,8 @@ Checkbox Select
     Select Checkbox                ${Locator}
     Checkbox Should Be Selected    ${Locator}
 
+Validate Current Table 
 #Clean Table and converted to list for possible comparison in future use [For Excel TestData Validation]
-Validate Current Table
     [Arguments]    ${Locator}      
     Wait For Element    ${Locator}
     ${TableData}=    SeleniumLibrary.Get Text    ${Locator}
@@ -90,3 +91,12 @@ Validate Current Table
     END
     ${webList}=    Convert To List    ${webData}
     log    ${webList}
+
+Validate Images 
+#Check image if its valid and not broken
+    [Arguments]    ${Locator}      
+    Wait For Element    ${Locator}
+    ${Element_Attribute}    Get Element Attribute    ${Locator}     src
+    log    ${Element_Attribute}
+    ${Response}    Run Keyword And Ignore Error   RequestsLibrary.Get    ${Element_Attribute}   
+    Log    ${Response}
