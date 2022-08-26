@@ -1,5 +1,7 @@
 *** Settings ***
 Library     SeleniumLibrary
+Library     RequestsLibrary
+Library     Collections
 Library     Process 
 Library     String
 
@@ -74,3 +76,27 @@ Checkbox Select
     Select Checkbox                ${Locator}
     Checkbox Should Be Selected    ${Locator}
 
+Validate Current Table 
+#Clean Table and converted to list for possible comparison in future use [For Excel TestData Validation]
+    [Arguments]    ${Locator}      
+    Wait For Element    ${Locator}
+    ${TableData}=    SeleniumLibrary.Get Text    ${Locator}
+    ${Word}=    Strip String    ${TableData}
+    @{CleanedTableData}=    Split String    ${Word}    \n
+    ${webData}    Create List    ${EMPTY}
+    FOR    ${EQvalue}    IN    @{CleanedTableData}
+        ${Replace}    Replace String    ${EQvalue}    \u00A0    ${SPACE}
+        ${Strip}    Strip String    ${Replace}
+        Append To List    ${webData}    ${Strip}
+    END
+    ${webList}=    Convert To List    ${webData}
+    log    ${webList}
+
+Validate Images 
+#Check image if its valid and not broken
+    [Arguments]    ${Locator}      
+    Wait For Element    ${Locator}
+    ${Element_Attribute}    Get Element Attribute    ${Locator}     src
+    log    ${Element_Attribute}
+    ${Response}    Run Keyword And Ignore Error   RequestsLibrary.Get    ${Element_Attribute}   
+    Log    ${Response}
