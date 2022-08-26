@@ -16,7 +16,7 @@ Select Bank Manager Login
     Press A Button/Element    ${BankManagerButton}
     Wait For Element    ${AddCustomerButton}
     Wait For Element    ${OpenAccountButton}
-    Wait For Element    ${CustomerButton_BMP}
+    Wait For Element    ${CustomerListButton}
 
 Select Home Page Button
     Press A Button/Element    ${HomePageButton}

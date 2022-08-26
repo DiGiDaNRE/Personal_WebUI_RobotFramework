@@ -30,7 +30,7 @@ Cus_ConfirmWithdrawButton = "//*[@type='submit' and contains(text(),'Withdraw')]
 #Manager_HomePage
 AddCustomerButton = "//*[contains(text(),'Add Customer')]"
 OpenAccountButton = "//*[contains(text(),'Open Account')]" 
-CustomerButton_BMP = "//*[contains(text(),'Customers')]"
+CustomerListButton = "//*[contains(text(),'Customers')]"
     #AddCustomer
 FirstNameInput = "//*[@placeholder='First Name']"
 LastNameInput = "//*[@placeholder='Last Name']"
@@ -42,3 +42,6 @@ CustomerAccountSelect = "//*[contains(text(),'"+str(CustomerAccountName)+"')]"
 CurrencyDropDownActivate = "//*[@id='currency']"
 CurrencySelect = "//*[contains(text(),'"+str(Currency)+"') and @value='"+str(Currency)+"']"
 Manager_ProcessButton = "//*[@type='submit' and contains(text(),'Process')]"
+    #CustomerList
+CustomerList = "//*[@class='table table-bordered table-striped']"
+SearchCustomerInput = "//*[@placeholder='Search Customer']"

@@ -8,7 +8,6 @@ This Repository revolves on utilizing Robot-Framework on various test automation
 >Test automation **to be** implemented in this repository are:
 - API Automation
 - Mobile Automation
-- Database Automation
 - etc...
 	
 # Key points why we choose this framework
