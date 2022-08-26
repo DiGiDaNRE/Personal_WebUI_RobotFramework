@@ -54,3 +54,12 @@ Add new customer and account for customer to deposit then Withdraw
     Enter Deposit Amount and Confirm
     Enter Withdraw Amount and Confirm
     Select Home Page Button
+
+Add new customer and account then check customer list
+    Select Bank Manager Login
+    Add Customer
+    Open Account
+    Get Customer Details
+    Search Customer
+    Get Customer Details
+    Select Home Page Button

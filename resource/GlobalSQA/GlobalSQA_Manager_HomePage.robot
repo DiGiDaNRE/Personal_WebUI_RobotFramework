@@ -22,3 +22,11 @@ Get New Account Number
     ${Response}    Handle Alert    action=ACCEPT     
     ${NewAccountNumber}    Remove String    ${Response}    Account created successfully with account Number :   
     Log    ${NewAccountNumber}
+
+Get Customer Details
+    Press A Button/Element    ${CustomerListButton}
+    Validate Current Table    ${CustomerList}
+
+Search Customer
+    Press A Button/Element    ${CustomerListButton}
+    Input in Textbox    ${SearchCustomerInput}    ${SearchCustomer}
