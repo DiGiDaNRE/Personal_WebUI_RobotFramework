@@ -1,14 +1,5 @@
 # RF Automation Demo
-Practicing RF Automation
-
-This Repository revolves on utilizing Robot-Framework on various test automation.
->Test automation **existing** currently is for:
-- Web browser Automation
-
->Test automation **to be** implemented in this repository are:
-- API Automation
-- Mobile Automation
-- etc...
+Personal Project using RobotFramewrok for Web UI automation
 	
 # Key points why we choose this framework
 -Business users to automate any manual process
@@ -20,6 +11,9 @@ This Repository revolves on utilizing Robot-Framework on various test automation
 ## Setup 
 - Pick and IDE you prefer.
 - Install [Python](https://www.python.org/)
+- Download lastest ChromeDriver - https://chromedriver.chromium.org/downloads
+- 	*Copy to python path (ex. ./Python)
 - Install Packages needed:
 -	  pip install RobotFramework
--	  pip install RobotFramework-Selenium
+-	  pip install robotframework-seleniumlibrary
+-	  pip install selenium==4.9.0	(latest version is having issue with chromedriver) https://github.com/robotframework/SeleniumLibrary/issues/1835
